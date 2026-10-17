@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist/
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <title>SkidStorm Clone</title>
+    </head>
+    <body>
+        <div id="game-container">
+            <canvas id="gameCanvas"></canvas>
+
+            <div id="controls">
+                <div id="controls-left">
+                    <button id="btnLeft" class="control-btn">LEFT</button>
+                    <button id="btnRight" class="control-btn">RIGHT</button>
+                </div>
+                <div id="controls-right">
+                    <button id="btnBrake" class="control-btn">BRAKE</button>
+                    <button id="btnAccel" class="control-btn">ACCEL</button>
+                </div>
+            </div>
+        </div>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
