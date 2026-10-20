@@ -9,10 +9,10 @@ Caratteristiche:
 - Consigli personalizzati basati sull'apporto calorico.
 - Salvataggio locale persistente.
 
-L'APK compilato si trova in `skidstorm/platforms/android/app/build/outputs/apk/debug/app-debug.apk`.
+L'APK compilato si trova in `diettracker/platforms/android/app/build/outputs/apk/debug/app-debug.apk`.
 
 Per compilare manualmente:
 ```bash
-cd skidstorm
+cd diettracker
 cordova build android
 ```
