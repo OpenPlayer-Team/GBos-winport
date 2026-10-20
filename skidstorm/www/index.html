@@ -1,32 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
     <head>
         <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
-            https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist/
-        -->
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <link rel="stylesheet" href="css/index.css">
-        <title>SkidStorm Clone</title>
+        <title>DietTracker</title>
     </head>
     <body>
-        <div id="game-container">
-            <canvas id="gameCanvas"></canvas>
+        <div class="app-container">
+            <header>
+                <h1>Diario Alimentare</h1>
+                <div class="calories-summary">
+                    <span id="total-calories">0</span> kcal assunte oggi
+                </div>
+            </header>
 
-            <div id="controls">
-                <div id="controls-left">
-                    <button id="btnLeft" class="control-btn">LEFT</button>
-                    <button id="btnRight" class="control-btn">RIGHT</button>
-                </div>
-                <div id="controls-right">
-                    <button id="btnBrake" class="control-btn">BRAKE</button>
-                    <button id="btnAccel" class="control-btn">ACCEL</button>
-                </div>
-            </div>
+            <main>
+                <section class="add-food-section">
+                    <h2>Aggiungi pasto</h2>
+                    <form id="add-food-form">
+                        <div class="input-group">
+                            <label for="food-name">Cosa hai mangiato?</label>
+                            <input type="text" id="food-name" required placeholder="Es. Mela, Pasta al pomodoro...">
+                        </div>
+                        <div class="input-group">
+                            <label for="food-calories">Calorie (kcal)</label>
+                            <input type="number" id="food-calories" required min="1" placeholder="Es. 100">
+                        </div>
+                        <button type="submit" class="btn-primary">Aggiungi</button>
+                    </form>
+                </section>
+
+                <section class="food-list-section">
+                    <h2>I tuoi pasti di oggi</h2>
+                    <ul id="food-list">
+                        <!-- Items added dynamically here -->
+                    </ul>
+                </section>
+
+                <section class="advice-section">
+                    <h2>Consigli</h2>
+                    <div id="advice-box" class="advice-box">
+                        <!-- Advice added dynamically here -->
+                    </div>
+                </section>
+
+                <button id="btn-clear" class="btn-danger">Azzera Diario</button>
+            </main>
         </div>
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>
